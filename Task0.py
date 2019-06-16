@@ -13,8 +13,10 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-print "First record of calls,", calls[0][0], "calls", calls[0][1], "at time", calls[0][2], ",lasting", calls[0][3], "seconds"
 
+print "Last record of calls,", calls[-1][0], "calls ", calls[-1][1], "at time ", calls[-1][2], ", lasting", calls[-1][3], "seconds"
+
+", calls[-1][0], "
 """
 TASK 0:
 What is the first record of texts and what is the last record of calls?
