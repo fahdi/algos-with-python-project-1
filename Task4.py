@@ -43,8 +43,6 @@ list_of_numbers.sort(key=int)
 
 print "These numbers could be telemarketers:"
 
-#print len(list_of_numbers)
-
 for number in list_of_numbers:
     print number
 
