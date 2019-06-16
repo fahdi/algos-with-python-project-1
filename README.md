@@ -2,7 +2,6 @@
 
 ## Assumptions
 
-- I have assumed no space complexity for built in python functions.
 - Ignored constants
 - Ignored any complexity that CSV reader has built in
 
