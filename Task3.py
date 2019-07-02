@@ -37,15 +37,16 @@ for call in calls:
 
 area_codes.sort()
 
-print "The numbers called by people in Bangalore have codes:"
+print("The numbers called by people in Bangalore have codes:")
 
 for area_code in area_codes:
-    print area_code
+    print(area_code)
 
 percentage = float(from_bangalore) / float(to_bangalore) * 100
 
-print "{:.{}f}".format(percentage,
-                       2), "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
+print("{:.{}f}".format(percentage,
+                       2),
+      "percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 
 """
 
