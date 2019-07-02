@@ -28,7 +28,7 @@ for record in calls:
 
 count_ph_numbers = len(unique_numbers)
 
-print "There are", count_ph_numbers, "different telephone numbers in the records."
+print("There are", count_ph_numbers, "different telephone numbers in the records.")
 
 """
 TASK 1:

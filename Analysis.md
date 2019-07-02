@@ -16,7 +16,7 @@
 
 ## Task2 Analysis 
 
-**O(n)**: Since the program only runs once, the worst case is o(n)
+**O(n)**: Since the program only runs once, the worst case is o(n). max() is also O(n) so it will be O(2n) which can be simplified as O(n)
 
 
 ## Task3 Analysis 
