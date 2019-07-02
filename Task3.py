@@ -14,7 +14,7 @@ with open('calls.csv', 'r') as f:
 
 area_codes = []
 from_bangalore = 0
-to_bangalore = 0
+from_to_bangalore = 0
 percentage = 0.00
 
 for call in calls:
@@ -22,18 +22,18 @@ for call in calls:
         # split call[1] by ")" or space
         receiving_phone = []
         from_bangalore += 1
-        if ')' in call[1]:
-            receiving_phone = call[1].split(')')
-            # receiving_phone[0] = receiving_phone, ")"
-            receiving_phone[0] = receiving_phone[0].replace('(', '')
-        elif ' ' in call[1]:
+        if ' ' in call[1]:
             receiving_phone = call[1].split(' ')
 
-        if int(receiving_phone[0]) not in area_codes:
-            area_codes.append(int(receiving_phone[0]))
+        elif ')' in call[1]:
+            receiving_phone = call[1].split(')')
+            receiving_phone[0] = receiving_phone[0].replace('(', '')
 
-    if '(080)' in call[1]:
-        to_bangalore += 1
+        if receiving_phone[0] not in area_codes:
+            area_codes.append(receiving_phone[0])
+
+        if '(080)' in call[1]:
+            from_to_bangalore += 1
 
 area_codes.sort()
 
@@ -42,7 +42,7 @@ print("The numbers called by people in Bangalore have codes:")
 for area_code in area_codes:
     print(area_code)
 
-percentage = float(from_bangalore) / float(to_bangalore) * 100
+percentage = float(from_to_bangalore) / float(from_bangalore) * 100
 
 print("{:.{}f}".format(percentage,
                        2),
