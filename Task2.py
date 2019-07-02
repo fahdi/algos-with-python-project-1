@@ -3,8 +3,8 @@ Read file into texts and calls.
 It's ok if you don't understand how to read files
 """
 import csv
-from datetime import datetime
 
+from datetime import datetime
 
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -18,16 +18,25 @@ total_time = 0
 telephone_number = ""
 dated = ""
 
+# Make a dictionary for all calls and their time
+
+time_called = {}
+
 for call in calls:
-    if (int(call[3]) > total_time):
-        total_time = int(call[3])
-        telephone_number = call[0]
-        dated = call[2]
+    if call[0] not in time_called.keys():
+        time_called[call[0]] = int(call[3])
+    else:
+        time_called[call[0]] += int(call[3])
 
-date_obj = datetime.strptime(dated, '%d-%m-%Y %H:%M:%S') #01-09-2016 06:01:12 & 13-09-2016 16:11:06
-month_year = date_obj.strftime("%B %Y")
+    if call[1] not in time_called.keys():
+        time_called[call[1]] = int(call[3])
+    else:
+        time_called[call[1]] += int(call[3])
 
-print telephone_number, "spent the longest time,", total_time, "seconds, on the phone during", month_year, "."
+
+max_time_spent = max(zip(time_called.values(), time_called.keys()))
+
+print(max_time_spent[1], "spent the longest time,", max_time_spent[0], "seconds, on the phone during September 2016.")
 
 """
 TASK 2: Which telephone number spent the longest time on the phone
@@ -37,4 +46,3 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
-
