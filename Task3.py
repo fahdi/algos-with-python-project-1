@@ -24,6 +24,7 @@ for call in calls:
         from_bangalore += 1
         if ' ' in call[1]:
             receiving_phone = call[1].split(' ')
+            receiving_phone[0] = receiving_phone[0][0:4]
 
         elif ')' in call[1]:
             receiving_phone = call[1].split(')')
