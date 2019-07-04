@@ -1,9 +1,4 @@
-#Analyses 
-
-## Assumptions
-
-- Ignored constants
-- Ignored any complexity that CSV reader has built in
+# Analyses 
 
 ## Task0 Analysis 
 
