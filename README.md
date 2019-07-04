@@ -20,8 +20,8 @@
 
 ## Task3 Analysis 
 
-**O(n)**: Since the program iterates over input twice, the worst case is o(2n) and a the Big Oh simply is O(n)
+**O(n)**: Since the program iterates over input twice, the worst case is o(2n) and a the Big Oh simply is O(n) and sort method is O(nlog(n)) so the program's Big Oh is O(nlog(n)) 
 
 ## Task4 Analysis 
 
-**O(n)**: Since the program only iterates over all the inputs three times, the worst case is o(n)
+**O(n)**: Since the program only iterates over all the inputs three times, the worst case is o(n) and sort adds O(nlog(n)) so for the program, it is O(nlog(n)) 
